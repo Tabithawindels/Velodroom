@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foto's VéloDroom | Vakantiewoning Vlaamse Ardennen</title>
+  <meta name="description" content="Bekijk alle foto's van VéloDroom: woonkamer, keuken, slaapkamers, tuin, fietsenberging en meer. Vakantiewoning in Wortegem voor 6 personen.">
+  <link rel="canonical" href="https://www.velodroom16.be/fotos">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.65;font-size:16px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+:root{
+  --blue:#6abeec;--blue-dark:#4a9fd4;--orange:#ff6b01;--orange-dark:#e05a00;
+  --bg-alt:#eef7fc;--muted:#5a5a5a;--border:#cce8f7;
+  --shadow:0 4px 24px rgba(106,190,236,.12);--shadow-lg:0 8px 32px rgba(106,190,236,.2);
+  --radius:12px;--serif:'Playfair Display',Georgia,serif;
+}
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* NAV */
+.site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);height:72px;display:flex;align-items:center;transition:box-shadow .3s}
+.site-header.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.08)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{font-size:.95rem;font-weight:500;color:#1a1a1a;transition:color .2s}
+.nav-link:hover{color:var(--blue)}
+.nav-link.active{color:var(--blue);font-weight:600}
+.nav-cta{background:var(--orange);color:#fff!important;padding:.6rem 1.4rem;border-radius:6px;font-weight:600;transition:background .2s,transform .15s}
+.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav-toggle span{display:block;width:24px;height:2px;background:#1a1a1a;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* PAGE HERO */
+.page-hero{background:var(--bg-alt);padding:4rem 0 3rem;text-align:center}
+.page-hero .label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem}
+.page-hero h1{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:700;color:var(--blue);margin-bottom:.75rem}
+.page-hero p{color:var(--muted);font-size:1.05rem;max-width:520px;margin:0 auto}
+
+/* FILTER */
+.filter-bar{padding:1.25rem 0;text-align:center;position:sticky;top:72px;z-index:50;background:#fff;border-bottom:1px solid var(--border)}
+.filter-tabs{display:flex;gap:.4rem;flex-wrap:wrap;justify-content:center;padding:0 1rem}
+.filter-btn{padding:.45rem 1.1rem;border-radius:99px;border:2px solid var(--border);background:#fff;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .2s;color:#1a1a1a}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue)}
+.filter-btn.active{background:var(--blue);border-color:var(--blue);color:#fff}
+
+/* GALLERY SECTION */
+.gallery-section{padding:2.5rem 0 5rem}
+.room-block{margin-bottom:4rem}
+.room-block:last-child{margin-bottom:0}
+.room-title{font-family:var(--serif);font-size:1.35rem;font-weight:600;color:var(--blue);margin-bottom:1.25rem;padding-bottom:.6rem;border-bottom:2px solid var(--bg-alt)}
+
+/* STANDARD GRID */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.gallery-item{position:relative;overflow:hidden;border-radius:10px;cursor:pointer;aspect-ratio:4/3;background:var(--bg-alt)}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item .overlay{position:absolute;inset:0;background:rgba(26,46,69,0);display:flex;align-items:flex-end;padding:.75rem;transition:background .3s}
+.gallery-item:hover .overlay{background:rgba(26,46,69,.35)}
+.gallery-caption{color:#fff;font-size:.8rem;font-weight:500;opacity:0;transform:translateY(4px);transition:all .25s;text-shadow:0 1px 4px rgba(0,0,0,.6)}
+.gallery-item:hover .gallery-caption{opacity:1;transform:translateY(0)}
+
+/* SLAAPKAMER CARDS — 3 kaarten, klik om te openen */
+.bedroom-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.bedroom-card{
+  position:relative;overflow:hidden;border-radius:var(--radius);
+  cursor:pointer;aspect-ratio:3/2;background:var(--bg-alt);
+  box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s;
+}
+.bedroom-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.bedroom-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.bedroom-card:hover img{transform:scale(1.05)}
+.bedroom-card .card-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(to top, rgba(26,46,69,.7) 0%, rgba(26,46,69,.1) 50%, transparent 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:1.25rem;
+}
+.bedroom-card .card-title{font-family:var(--serif);font-size:1.1rem;font-weight:600;color:#fff;margin-bottom:.35rem}
+.bedroom-card .card-count{font-size:.8rem;color:rgba(255,255,255,.8);display:flex;align-items:center;gap:.35rem}
+.bedroom-card .card-count::before{content:'📷';font-size:.9rem}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:1000;background:rgba(0,0,0,.93);align-items:center;justify-content:center;padding:1rem}
+.lightbox.open{display:flex}
+.lightbox-inner{position:relative;max-width:1100px;width:100%;display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.lightbox img{max-height:82vh;max-width:100%;object-fit:contain;border-radius:8px;user-select:none}
+.lightbox-info{display:flex;gap:1.5rem;align-items:center}
+.lightbox-caption{color:rgba(255,255,255,.75);font-size:.875rem}
+.lightbox-counter{color:rgba(255,255,255,.45);font-size:.8rem}
+.lightbox-close{position:absolute;top:-2.75rem;right:0;background:none;border:none;color:#fff;font-size:2.2rem;cursor:pointer;line-height:1;opacity:.7;transition:opacity .2s}
+.lightbox-close:hover{opacity:1}
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.2);color:#fff;width:50px;height:50px;border-radius:50%;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.lightbox-prev{left:-64px}
+.lightbox-next{right:-64px}
+.lightbox-prev:hover,.lightbox-next:hover{background:rgba(255,255,255,.28)}
+
+/* Thumbnails strip in lightbox */
+.lightbox-thumbs{display:flex;gap:.4rem;max-width:90vw;overflow-x:auto;padding:.25rem 0}
+.lightbox-thumbs::-webkit-scrollbar{height:3px}
+.lightbox-thumbs::-webkit-scrollbar-thumb{background:rgba(255,255,255,.3);border-radius:2px}
+.lb-thumb{width:56px;height:40px;object-fit:cover;border-radius:4px;cursor:pointer;opacity:.5;transition:opacity .2s;flex-shrink:0;border:2px solid transparent}
+.lb-thumb.active{opacity:1;border-color:var(--orange)}
+
+/* FOOTER */
+.site-footer{background:#1a2e45;color:rgba(255,255,255,.8);padding:4rem 0 0;font-size:.9rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand img{margin-bottom:1rem;border-radius:8px}
+.footer-brand p{line-height:1.7;opacity:.7}
+.footer-contact h4,.footer-nav h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.footer-contact p{margin-bottom:.5rem}
+.footer-contact a,.footer-nav a{color:rgba(255,255,255,.7);transition:color .2s}
+.footer-contact a:hover,.footer-nav a:hover{color:#fff}
+.footer-nav ul{display:flex;flex-direction:column;gap:.5rem}
+.footer-bottom{text-align:center;padding:1.5rem 0;font-size:.8rem;opacity:.5}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .gallery-item.wide{grid-column:span 1}
+  .bedroom-cards{grid-template-columns:repeat(3,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+  .lightbox-prev{left:-10px}.lightbox-next{right:-10px}
+}
+@media(max-width:640px){
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .bedroom-cards{grid-template-columns:1fr}
+  .bedroom-card{aspect-ratio:16/9}
+  .nav-toggle{display:flex}
+  .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.08);padding:1rem 0}
+  .nav-links.open{display:flex}
+  .nav-link{width:100%;padding:.85rem 1.5rem}
+  .nav-cta{margin:.5rem 1.5rem;width:calc(100% - 3rem);text-align:center;border-radius:6px}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://static.wixstatic.com/media/c39e0c_bb763b8cdbab422d846812992f481e3e~mv2.png" alt="VéloDroom logo" width="108" height="54">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#over" class="nav-link">Home</a></li>
+      <li><a href="index.html#accommodatie" class="nav-link">Accommodatie</a></li>
+      <li><a href="fotos.html" class="nav-link active">Foto's</a></li>
+      <li><a href="index.html#recensies" class="nav-link">Recensies</a></li>
+      <li><a href="boek-nu.html" class="nav-cta nav-link">Boek Nu</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <span class="label">De woning in beeld</span>
+      <h1>Foto's van VéloDroom</h1>
+      <p>Ontdek elke ruimte — van de volledig uitgeruste keuken tot de veilige fietsenberging.</p>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <div class="filter-tabs">
+      <button class="filter-btn active" data-filter="all">Alles</button>
+      <button class="filter-btn" data-filter="woning">Woning</button>
+      <button class="filter-btn" data-filter="woonkamer">Woonkamer</button>
+      <button class="filter-btn" data-filter="keuken">Keuken</button>
+      <button class="filter-btn" data-filter="bureau">Bureau</button>
+      <button class="filter-btn" data-filter="slaapkamer">Slaapkamers</button>
+      <button class="filter-btn" data-filter="badkamer">Badkamer</button>
+      <button class="filter-btn" data-filter="toilet">Toilet</button>
+      <button class="filter-btn" data-filter="buiten">Tuin &amp; buiten</button>
+      <button class="filter-btn" data-filter="fiets">Fietsenberging</button>
+    </div>
+  </div>
+
+  <section class="gallery-section">
+    <div class="container">
+
+      <!-- WONING -->
+      <div class="room-block" data-room="woning">
+        <h2 class="room-title">🏠 Woning</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="woning" data-caption="Voorkant woning">
+            <img src="images/woning-1.png" alt="Voorkant VéloDroom" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Voorkant woning</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woning" data-caption="Sfeerbeeld VéloDroom">
+            <img src="images/sfeer-3.jpg" alt="Sfeerbeeld VéloDroom" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Sfeerbeeld</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woning" data-caption="Sfeerbeeld woning">
+            <img src="images/sfeer-4.jpg" alt="Sfeerbeeld woning" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Sfeerbeeld</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woning" data-caption="Inkomhal">
+            <img src="images/inkom-1.jpg" alt="Inkomhal" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Inkomhal</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woning" data-caption="Inkomhal detail">
+            <img src="images/inkom-2.jpg" alt="Inkomhal detail" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Inkomhal</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WOONKAMER -->
+      <div class="room-block" data-room="woonkamer">
+        <h2 class="room-title">🛋️ Woonkamer</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="woonkamer" data-caption="Woonkamer overzicht">
+            <img src="images/wk-1.jpg" alt="Woonkamer" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Woonkamer</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="Sfeerbeeld woonkamer">
+            <img src="images/sfeer-0.jpg" alt="Sfeerbeeld woonkamer" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Sfeer</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="Sfeerbeeld zetel">
+            <img src="images/sfeer-2.jpg" alt="Sfeerbeeld zetel" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Zetel</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="Woonkamer">
+            <img src="images/wk-2.jpg" alt="Woonkamer" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Woonkamer</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="Televisie met Chromecast">
+            <img src="images/wk-4.jpg" alt="TV met Chromecast" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">TV + Chromecast</span></div>
+          </div>
+          <div class="gallery-item wide" data-cat="woonkamer" data-caption="Leefruimte met pooltafel">
+            <img src="images/wk-5.png" alt="Leefruimte met pooltafel" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Pooltafel</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="Woonkamer en pooltafel">
+            <img src="images/wk-3.jpg" alt="Woonkamer en pooltafel" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Woonkamer &amp; pooltafel</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="PlayStation">
+            <img src="images/wk-6.jpg" alt="PlayStation" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">PlayStation</span></div>
+          </div>
+          <div class="gallery-item" data-cat="woonkamer" data-caption="Woonkamer">
+            <img src="images/wk-7.jpg" alt="Woonkamer" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Woonkamer</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KEUKEN -->
+      <div class="room-block" data-room="keuken">
+        <h2 class="room-title">🍳 Keuken</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="keuken" data-caption="Keuken overzicht">
+            <img src="images/keuken-1.jpg" alt="Keuken" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Keuken</span></div>
+          </div>
+          <div class="gallery-item" data-cat="keuken" data-caption="Keuken">
+            <img src="images/keuken-2.png" alt="Keuken" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Keuken</span></div>
+          </div>
+          <div class="gallery-item" data-cat="keuken" data-caption="Keuken detail">
+            <img src="https://static.wixstatic.com/media/c39e0c_3d1c24537a614fcebb54afd3eb5b109e~mv2.jpg" alt="Keuken detail" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Keuken detail</span></div>
+          </div>
+          <div class="gallery-item" data-cat="keuken" data-caption="Eethoek">
+            <img src="https://static.wixstatic.com/media/c39e0c_516e5e9e140943a990488c8d43b0cae6~mv2.jpg" alt="Eethoek" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Eethoek</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BUREAU -->
+      <div class="room-block" data-room="bureau">
+        <h2 class="room-title">💻 Bureau / Werkplek</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="bureau" data-caption="Werkplek met bureau">
+            <img src="images/bureau-1.jpg" alt="Werkplek" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Bureau</span></div>
+          </div>
+          <div class="gallery-item" data-cat="bureau" data-caption="Bureau met printer en wandrek">
+            <img src="images/bureau-3.jpg" alt="Bureau met printer" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Bureau</span></div>
+          </div>
+          <div class="gallery-item" data-cat="bureau" data-caption="Bureau detail">
+            <img src="images/bureau-2.jpg" alt="Bureau detail" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Bureau detail</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SLAAPKAMERS — 3 kaarten -->
+      <div class="room-block" data-room="slaapkamer">
+        <h2 class="room-title">🛏️ Slaapkamers</h2>
+        <div class="bedroom-cards">
+
+          <!-- Slaapkamer 1 -->
+          <div class="bedroom-card" data-bedroom="1">
+            <img src="images/sk1-1.jpg" alt="Slaapkamer 1" loading="lazy">
+            <div class="card-overlay">
+              <span class="card-title">Slaapkamer 1</span>
+              <span class="card-count">4 foto's — klik om te bekijken</span>
+            </div>
+          </div>
+
+          <!-- Slaapkamer 2 -->
+          <div class="bedroom-card" data-bedroom="2">
+            <img src="images/sk2-1.png" alt="Slaapkamer 2" loading="lazy">
+            <div class="card-overlay">
+              <span class="card-title">Slaapkamer 2</span>
+              <span class="card-count">6 foto's — klik om te bekijken</span>
+            </div>
+          </div>
+
+          <!-- Slaapkamer 3 -->
+          <div class="bedroom-card" data-bedroom="3">
+            <img src="images/sk3-1.png" alt="Slaapkamer 3" loading="lazy">
+            <div class="card-overlay">
+              <span class="card-title">Slaapkamer 3</span>
+              <span class="card-count">6 foto's — klik om te bekijken</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BADKAMER -->
+      <div class="room-block" data-room="badkamer">
+        <h2 class="room-title">🚿 Badkamer</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="badkamer" data-caption="Badkamer overzicht">
+            <img src="images/bad-5.jpg" alt="Badkamer overzicht" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Badkamer</span></div>
+          </div>
+          <div class="gallery-item" data-cat="badkamer" data-caption="Badkamer — bad en douche">
+            <img src="images/bad-4.jpg" alt="Bad en douche" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Bad &amp; douche</span></div>
+          </div>
+          <div class="gallery-item" data-cat="badkamer" data-caption="Wastafel met Rituals producten">
+            <img src="images/bad-6.jpg" alt="Wastafel" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Wastafel</span></div>
+          </div>
+          <div class="gallery-item" data-cat="badkamer" data-caption="Badkamer — overzicht 2">
+            <img src="images/bad-7.jpg" alt="Badkamer overzicht 2" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Badkamer</span></div>
+          </div>
+          <div class="gallery-item wide" data-cat="badkamer" data-caption="Badkamer breed">
+            <img src="images/bad-8.jpg" alt="Badkamer breed" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Badkamer breed</span></div>
+          </div>
+          <div class="gallery-item" data-cat="badkamer" data-caption="Badkamer">
+            <img src="images/bad-1.jpg" alt="Badkamer" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Badkamer</span></div>
+          </div>
+          <div class="gallery-item" data-cat="badkamer" data-caption="Douche">
+            <img src="images/bad-2.jpg" alt="Douche" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Douche</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TOILET APART -->
+      <div class="room-block" data-room="toilet">
+        <h2 class="room-title">🚽 Toilet (apart, gelijkvloers)</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="toilet" data-caption="Apart toilet gelijkvloers">
+            <img src="images/toilet-beneden.jpg" alt="Apart toilet gelijkvloers" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Toilet gelijkvloers</span></div>
+          </div>
+          <div class="gallery-item" data-cat="toilet" data-caption="Toilet detail">
+            <img src="images/bad-3.jpg" alt="Toilet detail" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Toilet</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TUIN -->
+      <div class="room-block" data-room="buiten">
+        <h2 class="room-title">🌿 Tuin &amp; buiten</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="buiten" data-caption="Achterkant woning met tuin">
+            <img src="images/buiten-1.png" alt="Tuin en achterkant woning" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Achterkant woning</span></div>
+          </div>
+          <div class="gallery-item" data-cat="buiten" data-caption="Tuin">
+            <img src="images/buiten-2.jpg" alt="Tuin" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Tuin</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FIETSENBERGING -->
+      <div class="room-block" data-room="fiets">
+        <h2 class="room-title">🚲 Fietsenberging</h2>
+        <div class="gallery-grid">
+          <div class="gallery-item wide" data-cat="fiets" data-caption="Fietsenberging — garage">
+            <img src="https://static.wixstatic.com/media/c39e0c_2974d478627a4f5a9058435423762805~mv2.png" alt="Fietsenberging" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Fietsenberging</span></div>
+          </div>
+          <div class="gallery-item" data-cat="fiets" data-caption="Fietsenberging detail">
+            <img src="https://static.wixstatic.com/media/c39e0c_f9c7a1315ce4470982f1eef5265e033b~mv2.png" alt="Fietsenberging detail" loading="lazy">
+            <div class="overlay"><span class="gallery-caption">Fietsenberging</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+  </section>
+</main>
+
+<!-- LIGHTBOX (algemeen + slaapkamers) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <div class="lightbox-inner">
+    <button class="lightbox-close" id="lb-close" aria-label="Sluiten">&times;</button>
+    <button class="lightbox-prev" id="lb-prev" aria-label="Vorige">&#8592;</button>
+    <img src="" alt="" id="lb-img">
+    <div class="lightbox-info">
+      <p class="lightbox-caption" id="lb-caption"></p>
+      <span class="lightbox-counter" id="lb-counter"></span>
+    </div>
+    <div class="lightbox-thumbs" id="lb-thumbs"></div>
+    <button class="lightbox-next" id="lb-next" aria-label="Volgende">&#8594;</button>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://static.wixstatic.com/media/c39e0c_bb763b8cdbab422d846812992f481e3e~mv2.png" alt="VéloDroom logo" width="108" height="54">
+        <p>Vakantiewoning in Wortegem-Petegem.<br>Jouw uitvalsbasis in de Vlaamse Ardennen.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:+32478512039">+32 478 51 20 39</a> (Tabitha)</p>
+        <p>📞 <a href="tel:+32495688316">+32 495 68 83 16</a> (Rigès)</p>
+        <p>✉️ <a href="mailto:velodroom16@gmail.com">velodroom16@gmail.com</a></p>
+        <p>📍 Spreeuwengoed 16, 9790 Wortegem-Petegem</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fotos.html">Foto's</a></li>
+          <li><a href="boek-nu.html">Boek Nu</a></li>
+          <li><a href="privacybeleid.html">Privacybeleid</a></li>
+          <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> VéloDroom. Alle rechten voorbehouden.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Nav
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 10), {passive:true});
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => {
+  const o = navLinks.classList.toggle('open');
+  toggle.classList.toggle('active', o);
+  toggle.setAttribute('aria-expanded', o);
+});
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  navLinks.classList.remove('open'); toggle.classList.remove('active');
+}));
+
+// Filter
+const filterBtns = document.querySelectorAll('.filter-btn');
+const roomBlocks = document.querySelectorAll('.room-block');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    roomBlocks.forEach(block => {
+      block.style.display = (f === 'all' || block.dataset.room === f) ? '' : 'none';
+    });
+  });
+});
+
+// ===== LIGHTBOX =====
+const lb       = document.getElementById('lightbox');
+const lbImg    = document.getElementById('lb-img');
+const lbCap    = document.getElementById('lb-caption');
+const lbCount  = document.getElementById('lb-counter');
+const lbThumbs = document.getElementById('lb-thumbs');
+let pool = [], cur = 0;
+
+function buildThumbs() {
+  lbThumbs.innerHTML = '';
+  pool.forEach((item, i) => {
+    const t = document.createElement('img');
+    t.src = item.src;
+    t.alt = item.caption;
+    t.className = 'lb-thumb' + (i === cur ? ' active' : '');
+    t.addEventListener('click', () => showSlide(i));
+    lbThumbs.appendChild(t);
+  });
+}
+
+function showSlide(i) {
+  cur = (i + pool.length) % pool.length;
+  lbImg.src = pool[cur].src;
+  lbImg.alt = pool[cur].caption;
+  lbCap.textContent = pool[cur].caption;
+  lbCount.textContent = (cur + 1) + ' / ' + pool.length;
+  lbThumbs.querySelectorAll('.lb-thumb').forEach((t, j) => {
+    t.classList.toggle('active', j === cur);
+    if (j === cur) t.scrollIntoView({inline:'nearest', block:'nearest'});
+  });
+}
+
+function openLb(items, startIndex) {
+  pool = items;
+  buildThumbs();
+  showSlide(startIndex || 0);
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLb() {
+  lb.classList.remove('open');
+  document.body.style.overflow = '';
+  lbImg.src = '';
+}
+
+document.getElementById('lb-close').addEventListener('click', closeLb);
+document.getElementById('lb-prev').addEventListener('click', () => showSlide(cur - 1));
+document.getElementById('lb-next').addEventListener('click', () => showSlide(cur + 1));
+lb.addEventListener('click', e => { if (e.target === lb) closeLb(); });
+document.addEventListener('keydown', e => {
+  if (!lb.classList.contains('open')) return;
+  if (e.key === 'Escape') closeLb();
+  if (e.key === 'ArrowLeft') showSlide(cur - 1);
+  if (e.key === 'ArrowRight') showSlide(cur + 1);
+});
+let sx = 0;
+lbImg.addEventListener('touchstart', e => sx = e.touches[0].clientX, {passive:true});
+lbImg.addEventListener('touchend', e => {
+  if (Math.abs(sx - e.changedTouches[0].clientX) > 50) showSlide(sx > e.changedTouches[0].clientX ? cur+1 : cur-1);
+});
+
+// Slaapkamer data
+const bedroomPhotos = {
+  1: [
+    {src:'images/sk1-1.jpg', caption:'Slaapkamer 1'},
+    {src:'images/sk1-2.png', caption:'Slaapkamer 1'},
+    {src:'images/sk1-3.jpg', caption:'Slaapkamer 1'},
+    {src:'images/sk1-4.jpg', caption:'Slaapkamer 1'},
+  ],
+  2: [
+    {src:'images/sk2-1.png', caption:'Slaapkamer 2'},
+    {src:'images/sk2-2.jpg', caption:'Slaapkamer 2'},
+    {src:'images/sk2-3.jpg', caption:'Slaapkamer 2'},
+    {src:'images/sk2-4.jpg', caption:'Slaapkamer 2'},
+    {src:'images/sk2-5.jpg', caption:'Slaapkamer 2'},
+    {src:'images/sk2-6.jpg', caption:'Slaapkamer 2'},
+  ],
+  3: [
+    {src:'images/sk3-1.png', caption:'Slaapkamer 3'},
+    {src:'images/sk3-2.jpg', caption:'Slaapkamer 3 — sfeer'},
+    {src:'images/sk3-3.jpg', caption:'Slaapkamer 3 — uitzicht'},
+    {src:'images/sk3-4.jpg', caption:'Slaapkamer 3'},
+    {src:'images/sk3-5.jpg', caption:'Slaapkamer 3'},
+    {src:'images/sk3-6.jpg', caption:'Slaapkamer 3'},
+  ],
+};
+
+// Slaapkamer kaarten
+document.querySelectorAll('.bedroom-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const n = card.dataset.bedroom;
+    openLb(bedroomPhotos[n], 0);
+  });
+});
+
+// Gewone gallery items
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const block = item.closest('.room-block');
+    const visibleItems = [...block.querySelectorAll('.gallery-item')];
+    const items = visibleItems.map(el => ({
+      src: el.querySelector('img').src,
+      caption: el.dataset.caption || el.querySelector('img').alt,
+    }));
+    const idx = visibleItems.indexOf(item);
+    openLb(items, idx);
+  });
+});
+</script>
+</body>
+</html>
