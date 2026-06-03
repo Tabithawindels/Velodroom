@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VéloDroom — Vakantiewoning Vlaamse Ardennen | Fietsvakantie Wortegem</title>
+  <meta name="description" content="Huur VéloDroom: een volledig huis voor 6 personen in Wortegem, hart van de Vlaamse Ardennen. Ideaal voor fietsers. Fiets de Muur, Paterberg en Koppenberg. Boek rechtstreeks.">
+  <link rel="canonical" href="https://www.velodroom16.be/">
+  <meta property="og:title" content="VéloDroom — Vakantiewoning Vlaamse Ardennen">
+  <meta property="og:description" content="Volledig huis voor 6 personen in Wortegem. Ideaal voor fietsers. Boek rechtstreeks.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.velodroom16.be/">
+  <meta property="og:image" content="https://static.wixstatic.com/media/c39e0c_2cda100f00e746e08c80a571532b146c~mv2.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LodgingBusiness","name":"VéloDroom","description":"Vakantiewoning voor 6 personen in Wortegem, Vlaamse Ardennen.","url":"https://www.velodroom16.be","telephone":"+32478512039","email":"velodroom16@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Spreeuwengoed 16","addressLocality":"Wortegem-Petegem","postalCode":"9790","addressCountry":"BE"},"numberOfRooms":3,"petsAllowed":false}</script>
+
+<style>
+/* ===== RESET & BASE ===== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.65;font-size:16px}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+
+/* ===== VARIABLES ===== */
+:root{
+  --green:#6abeec;
+  --green-dark:#4a9fd4;
+  --orange:#ff6b01;
+  --orange-dark:#e05a00;
+  --bg:#fff;
+  --bg-alt:#eef7fc;
+  --muted:#5a5a5a;
+  --border:#cce8f7;
+  --shadow:0 4px 24px rgba(106,190,236,.12);
+  --shadow-lg:0 8px 32px rgba(106,190,236,.2);
+  --radius:12px;
+  --serif:'Playfair Display',Georgia,serif;
+}
+
+/* ===== CONTAINER ===== */
+.container{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+/* ===== BUTTONS ===== */
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:.8rem 2rem;border-radius:6px;font-family:'Inter',sans-serif;font-size:.95rem;font-weight:600;cursor:pointer;border:2px solid transparent;transition:all .2s;white-space:nowrap}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--orange);color:#fff;border-color:var(--orange)}
+.btn-primary:hover{background:var(--orange-dark);border-color:var(--orange-dark)}
+.btn-secondary{background:var(--green);color:#fff;border-color:var(--green)}
+.btn-secondary:hover{background:var(--green-dark)}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-outline:hover{background:rgba(255,255,255,.15);border-color:#fff}
+.btn-ghost-light{background:transparent;color:#fff;border-color:rgba(255,255,255,.5)}
+.btn-ghost-light:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.8)}
+
+/* ===== NAV ===== */
+.site-header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+  height:72px;display:flex;align-items:center;
+  transition:box-shadow .3s
+}
+.site-header.scrolled{box-shadow:0 2px 16px rgba(0,0,0,.08)}
+.nav-inner{
+  max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;
+  display:flex;align-items:center;justify-content:space-between;gap:2rem
+}
+.nav-logo img{height:44px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-link{font-size:.95rem;font-weight:500;color:#1a1a1a;transition:color .2s}
+.nav-link:hover{color:var(--green)}
+.nav-cta{background:var(--orange);color:#fff!important;padding:.6rem 1.4rem;border-radius:6px;font-weight:600;transition:background .2s,transform .15s}
+.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px)}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+.nav-toggle span{display:block;width:24px;height:2px;background:#1a1a1a;border-radius:2px;transition:transform .3s,opacity .3s}
+.nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.active span:nth-child(2){opacity:0}
+.nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ===== HERO ===== */
+.hero{
+  position:relative;min-height:calc(100vh - 72px);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;overflow:hidden
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://static.wixstatic.com/media/c39e0c_2cda100f00e746e08c80a571532b146c~mv2.jpg') center/cover no-repeat;
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.45),rgba(0,0,0,.58))}
+.hero-content{position:relative;z-index:1;max-width:800px;padding:2rem 1.5rem;color:#fff}
+.hero-content h1{
+  font-family:var(--serif);
+  font-size:clamp(1.9rem,5vw,3.5rem);
+  font-weight:700;line-height:1.2;
+  margin-bottom:1.25rem;
+  text-shadow:0 2px 12px rgba(0,0,0,.3)
+}
+.hero-sub{font-size:clamp(.95rem,2vw,1.2rem);font-weight:300;opacity:.92;margin-bottom:2.5rem;max-width:600px;margin-left:auto;margin-right:auto}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+
+/* ===== USP STRIP ===== */
+.usp-strip{background:var(--green);color:#fff;padding:2.5rem 0}
+.usp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.usp-item{display:flex;align-items:flex-start;gap:1rem}
+.usp-icon{font-size:2rem;flex-shrink:0;margin-top:2px}
+.usp-item strong{display:block;font-size:1rem;font-weight:600;margin-bottom:.25rem}
+.usp-item p{font-size:.875rem;opacity:.85;line-height:1.5}
+
+/* ===== SECTIONS ===== */
+.section{padding:5rem 0}
+.section-alt{background:var(--bg-alt)}
+.section-header{text-align:center;max-width:640px;margin:0 auto 3.5rem}
+.section-header p{color:var(--muted);margin-top:.75rem}
+.label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.6rem}
+h2{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;line-height:1.2;color:var(--green)}
+
+/* split layout */
+.section-split{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.section-split--rev .section-text{order:2}
+.section-split--rev .section-image{order:1}
+.section-text .label{display:block}
+.section-text h2{margin-bottom:1rem}
+.section-text p{color:var(--muted);margin-bottom:1rem}
+.section-text p:last-of-type{margin-bottom:1.5rem}
+.section-image img{width:100%;border-radius:var(--radius);object-fit:cover;aspect-ratio:4/3;box-shadow:var(--shadow)}
+
+/* ===== ROOMS GRID ===== */
+.rooms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-bottom:2.5rem}
+.room-card{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+.room-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.room-card--accent{border-top:3px solid var(--green)}
+.room-img{overflow:hidden;aspect-ratio:16/10}
+.room-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.room-card:hover .room-img img{transform:scale(1.04)}
+.room-body{padding:1.25rem 1.5rem 1.5rem}
+.room-body h3{font-family:var(--serif);font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+.room-body p{font-size:.9rem;color:var(--muted);line-height:1.6}
+.cta-center{text-align:center}
+
+/* ===== PRICE TABLE ===== */
+.price-table-wrap{overflow-x:auto;margin-bottom:2.5rem}
+.price-table{width:100%;max-width:640px;margin:0 auto;border-collapse:collapse;font-size:.95rem}
+.price-table th,.price-table td{padding:1rem 1.5rem;text-align:left;border-bottom:1px solid var(--border)}
+.price-table thead th{background:var(--green);color:#fff;font-weight:600;font-size:.875rem;text-transform:uppercase;letter-spacing:.06em}
+.price-table thead th:first-child{border-radius:var(--radius) 0 0 0}
+.price-table thead th:last-child{border-radius:0 var(--radius) 0 0}
+.price-table tbody tr:hover td{background:var(--bg)}
+.price-table td:not(:first-child){font-weight:600;color:var(--green-dark)}
+.text-center{text-align:center}
+.price-table small{font-size:.8rem;font-weight:400;color:var(--muted)}
+
+/* ===== REVIEWS ===== */
+.reviews-outer{overflow:hidden;margin-bottom:1.5rem}
+.reviews-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1)}
+.review-card{
+  flex:0 0 100%;
+  background:#fff;border-radius:var(--radius);
+  padding:2.5rem;box-shadow:var(--shadow);
+  max-width:700px;margin:0 auto
+}
+.review-stars{font-size:1.25rem;margin-bottom:1rem}
+.review-card blockquote{font-family:var(--serif);font-size:1.1rem;font-style:italic;line-height:1.7;color:#1a1a1a;margin-bottom:1.5rem}
+.review-card footer{display:flex;align-items:center;gap:.75rem}
+.review-card footer strong{font-size:.95rem}
+.review-meta{font-size:.8rem;color:var(--muted)}
+.slider-controls{display:flex;align-items:center;justify-content:center;gap:1rem}
+.slider-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--border);background:#fff;cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.slider-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
+.slider-dots{display:flex;gap:6px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--border);cursor:pointer;border:none;transition:background .2s,transform .2s}
+.dot.active{background:var(--green);transform:scale(1.3)}
+
+/* ===== LOCATIE ===== */
+.location-list{margin:1.25rem 0}
+.location-list li{padding:.4rem 0;font-size:.95rem;color:var(--muted)}
+.location-list li strong{color:#1a1a1a}
+.address-block{font-size:.9rem;color:var(--muted);line-height:1.8;margin-top:.5rem}
+.map-embed{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.map-embed iframe{display:block}
+
+/* ===== HUISREGELS ===== */
+.rules-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:0 auto}
+.rule-block{background:#fff;border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow)}
+.rule-block h3{font-family:var(--serif);font-size:1.1rem;font-weight:600;margin-bottom:1rem}
+.rule-block ul{display:flex;flex-direction:column;gap:.5rem}
+.rule-block li{font-size:.9rem;color:var(--muted)}
+.rule-block li strong{color:#1a1a1a}
+
+/* ===== CTA BANNER ===== */
+.cta-banner{background:var(--green);color:#fff;padding:5rem 0;text-align:center}
+.cta-banner h2{font-family:var(--serif);font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:.75rem;color:#fff}
+.cta-banner p{font-size:1.05rem;opacity:.85;margin-bottom:2rem}
+
+/* ===== FOOTER ===== */
+.site-footer{background:#1a2e45;color:rgba(255,255,255,.8);padding:4rem 0 0;font-size:.9rem}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;padding-bottom:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.footer-brand img{margin-bottom:1rem;border-radius:8px}
+.footer-brand p{line-height:1.7;opacity:.7}
+.footer-contact h4,.footer-nav h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+.footer-contact p{margin-bottom:.5rem}
+.footer-contact a,.footer-nav a{color:rgba(255,255,255,.7);transition:color .2s}
+.footer-contact a:hover,.footer-nav a:hover{color:#fff}
+.footer-nav ul{display:flex;flex-direction:column;gap:.5rem}
+.footer-bottom{text-align:center;padding:1.5rem 0;font-size:.8rem;opacity:.5}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .rooms-grid{grid-template-columns:repeat(2,1fr)}
+  .section-split{grid-template-columns:1fr;gap:2rem}
+  .section-split--rev .section-text{order:1}
+  .section-split--rev .section-image{order:2}
+  .usp-grid{grid-template-columns:1fr;gap:1.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .section{padding:3.5rem 0}
+  .nav-toggle{display:flex}
+  .nav-links{
+    display:none;position:absolute;top:72px;left:0;right:0;
+    background:#fff;flex-direction:column;align-items:flex-start;gap:0;
+    border-bottom:1px solid var(--border);box-shadow:0 8px 24px rgba(0,0,0,.08);padding:1rem 0
+  }
+  .nav-links.open{display:flex}
+  .nav-link{width:100%;padding:.85rem 1.5rem}
+  .nav-cta{margin:.5rem 1.5rem;width:calc(100% - 3rem);text-align:center;border-radius:6px}
+  .rooms-grid{grid-template-columns:1fr}
+  .rules-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;align-items:center}
+  .hero-actions .btn{width:100%;max-width:280px}
+  .review-card{padding:1.75rem}
+  .review-card blockquote{font-size:1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://static.wixstatic.com/media/c39e0c_bb763b8cdbab422d846812992f481e3e~mv2.png" alt="VéloDroom logo" width="108" height="54">
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu openen" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#over" class="nav-link">Home</a></li>
+      <li><a href="#accommodatie" class="nav-link">Accommodatie</a></li>
+      <li><a href="fotos.html" class="nav-link">Foto's</a></li>
+      <li><a href="#recensies" class="nav-link">Recensies</a></li>
+      <li><a href="boek-nu.html" class="nav-cta nav-link">Boek Nu</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <h1>VéloDroom — Fietsvakantie in de Vlaamse Ardennen</h1>
+    <p class="hero-sub">Comfortabele vakantiewoning voor 6 personen in Wortegem. Fiets de Ronde, de Muur, de Paterberg — en kom thuis in jouw eigen droom.</p>
+    <div class="hero-actions">
+      <a href="boek-nu.html" class="btn btn-primary">Boek Nu</a>
+      <a href="#accommodatie" class="btn btn-outline">Bekijk de woning</a>
+    </div>
+  </div>
+</section>
+
+<!-- USP STRIP -->
+<section class="usp-strip">
+  <div class="container">
+    <div class="usp-grid">
+      <div class="usp-item">
+        <span class="usp-icon">🚲</span>
+        <div>
+          <strong>Fietsenberging &amp; spoelplaats</strong>
+          <p>Veilige garage voor je fietsen met poetsmateriaal en tuinslang</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">🏠</span>
+        <div>
+          <strong>Volledig huis — niet gedeeld</strong>
+          <p>Je hebt het hele huis voor jouw groep — geen andere gasten</p>
+        </div>
+      </div>
+      <div class="usp-item">
+        <span class="usp-icon">👥</span>
+        <div>
+          <strong>Tot 6 personen</strong>
+          <p>Drie slaapkamers, ruime living en volledig uitgeruste keuken</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OVER -->
+<section class="section" id="over">
+  <div class="container">
+    <div class="section-split">
+      <div class="section-text">
+        <span class="label">Over VéloDroom</span>
+        <h2>Jouw thuisbasis in wielerland</h2>
+        <p>De Vlaamse Ardennen is wielertoerisme. De Muur van Geraardsbergen, de Paterberg, de Koppenberg — allemaal op fietsafstand. VéloDroom is jouw thuisbasis.</p>
+        <p>Volledig huis voor 6 personen in Wortegem. Drie slaapkamers, ruime living, volledig uitgeruste keuken, tuin met terras en een veilige fietsenberging. Alles wat je nodig hebt — niets wat je niet nodig hebt.</p>
+        <a href="boek-nu.html" class="btn btn-primary">Boek rechtstreeks</a>
+      </div>
+      <div class="section-image">
+        <img src="https://static.wixstatic.com/media/c39e0c_3f9fa5193aae49709af6f1f534fb75ad~mv2.jpg" alt="VéloDroom vakantiewoning Wortegem" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACCOMMODATIE -->
+<section class="section section-alt" id="accommodatie">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">De woning</span>
+      <h2>Alles wat je nodig hebt</h2>
+      <p>Zes slaapplekken, een volledig uitgerust huis en een garage voor je fietsen.</p>
+    </div>
+    <div class="rooms-grid">
+
+      <article class="room-card">
+        <div class="room-img">
+          <img src="https://static.wixstatic.com/media/c39e0c_623c1bec807143ed9e26ae8d5e4d26ae~mv2.jpg" alt="Woonkamer met pooltafel" loading="lazy">
+        </div>
+        <div class="room-body">
+          <h3>Woonkamer</h3>
+          <p>Ruime woonkamer met tv en Chromecast, snelle wifi, pooltafel, PlayStation en gezelschapsspelen.</p>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-img">
+          <img src="https://static.wixstatic.com/media/c39e0c_eb62fb18d8144e58b301aea8225352d5~mv2.jpg" alt="Volledig uitgeruste keuken" loading="lazy">
+        </div>
+        <div class="room-body">
+          <h3>Keuken</h3>
+          <p>Kookplaat, oven, vaatwasser, koelkast, wasmachine, airfryer en alle nodige keukengerei.</p>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-img">
+          <img src="https://static.wixstatic.com/media/c39e0c_2e46d000f44f446fbaed6514c75242d0~mv2.jpg" alt="Slaapkamer met tweepersoonsbed" loading="lazy">
+        </div>
+        <div class="room-body">
+          <h3>Slaapkamers (3)</h3>
+          <p>Drie slaapkamers met comfortabele dubbele bedden en kwaliteitsbeddengoed.</p>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-img">
+          <img src="https://static.wixstatic.com/media/c39e0c_b0e41b6af0e34327a04ae179096a8135~mv2.jpg" alt="Tuin en terras" loading="lazy">
+        </div>
+        <div class="room-body">
+          <h3>Tuin &amp; terras</h3>
+          <p>Buitenterras met lounge en eettafel voor 6 personen tijdens de zomermaanden.</p>
+        </div>
+      </article>
+
+      <article class="room-card">
+        <div class="room-img">
+          <img src="https://static.wixstatic.com/media/c39e0c_9a62aaaf599e4e4fbb1f5aed310f13d9~mv2.jpg" alt="Badkamer met bad en douche" loading="lazy">
+        </div>
+        <div class="room-body">
+          <h3>Badkamer</h3>
+          <p>Bad, douche, wastafel en toilet. Handdoeken, haardroger en doucheproducten voorzien.</p>
+        </div>
+      </article>
+
+      <article class="room-card room-card--accent">
+        <div class="room-img">
+          <img src="https://static.wixstatic.com/media/c39e0c_2974d478627a4f5a9058435423762805~mv2.png" alt="Fietsenberging garage" loading="lazy">
+        </div>
+        <div class="room-body">
+          <h3>🚲 Fietsenberging</h3>
+          <p>Veilige garage met poetsmateriaal en tuinslang. Check-in zelfstandig via deurcode.</p>
+        </div>
+      </article>
+
+    </div>
+    <div class="cta-center">
+      <a href="fotos.html" class="btn btn-secondary">Bekijk alle foto's</a>
+    </div>
+  </div>
+</section>
+
+<!-- PRIJZEN -->
+<section class="section" id="prijzen">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Tarieven</span>
+      <h2>Boek rechtstreeks — altijd voordeliger</h2>
+      <p>Geen commissie, direct contact. Altijd voordeliger dan Airbnb of Booking.com.</p>
+    </div>
+    <div class="price-table-wrap">
+      <table class="price-table">
+        <thead>
+          <tr><th>Periode</th><th>Weekdag</th><th>Weekend</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Regulier</td><td>€200</td><td>€250</td></tr>
+          <tr><td>Schoolvakantie</td><td>€225</td><td>€270</td></tr>
+          <tr><td>Speciale evenementen <small>(wielerweekend…)</small></td><td colspan="2" class="text-center">Op aanvraag</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="cta-center">
+      <a href="boek-nu.html" class="btn btn-primary">Boek Nu — Rechtstreeks</a>
+    </div>
+  </div>
+</section>
+
+<!-- RECENSIES -->
+<section class="section section-alt" id="recensies">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Wat gasten zeggen</span>
+      <h2>Beoordelingen</h2>
+    </div>
+    <div class="reviews-outer">
+      <div class="reviews-track" id="reviews-track">
+
+        <article class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"Ideaal verblijf om met je fiets de Vlaamse Ardennen te verkennen. Als koersfan waren er veel leuke referenties. Er was ook de optie om je fiets te onderhouden in de garage. Woning was zeer proper en volledig in orde."</blockquote>
+          <footer><strong>Wout</strong><span class="review-meta">🇧🇪 · Booking.com · 10/10</span></footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"De rust en stilte — de inrichting — de attente details van de eigenaren — de kwaliteit van het beddengoed — de netheid — de locatie. Alles was perfect."</blockquote>
+          <footer><strong>Dolores</strong><span class="review-meta">🇫🇷 · Booking.com · 9/10</span></footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"Erg mooie woning en ideaal als uitvalsbasis voor fietstochten door de Vlaamse Ardennen. Rigès en Tabitha erg vriendelijke en behulpzame hosts."</blockquote>
+          <footer><strong>Sjoerd</strong><span class="review-meta">🇳🇱 · Airbnb</span></footer>
+        </article>
+
+        <article class="review-card">
+          <div class="review-stars">⭐⭐⭐⭐⭐</div>
+          <blockquote>"Een soort verborgen parel op slechts 10 km van Oudenaarde. Geweldig fietsen op autovrije wegen. Een echte aanrader."</blockquote>
+          <footer><strong>Mike</strong><span class="review-meta">Airbnb · april 2026</span></footer>
+        </article>
+
+      </div>
+    </div>
+    <div class="slider-controls">
+      <button class="slider-btn" id="prev-btn" aria-label="Vorige recensie">&#8592;</button>
+      <div class="slider-dots" id="slider-dots"></div>
+      <button class="slider-btn" id="next-btn" aria-label="Volgende recensie">&#8594;</button>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIE -->
+<section class="section" id="locatie">
+  <div class="container">
+    <div class="section-split section-split--rev">
+      <div class="section-text">
+        <span class="label">Locatie</span>
+        <h2>Hart van de Vlaamse Ardennen</h2>
+        <p>VéloDroom ligt in Wortegem-Petegem, op fietsafstand van de iconische klimmen uit de klassiekers.</p>
+        <ul class="location-list">
+          <li>🏔️ <strong>Koppenberg</strong> — 10 km</li>
+          <li>🏔️ <strong>Paterberg</strong> — 15 km</li>
+          <li>🏔️ <strong>Muur van Geraardsbergen</strong> — 25 km</li>
+          <li>🏙️ <strong>Oudenaarde</strong> — 10 km</li>
+          <li>🏙️ <strong>Gent</strong> — 35 km</li>
+        </ul>
+        <p class="address-block">📍 Spreeuwengoed 16<br>9790 Wortegem-Petegem, België</p>
+      </div>
+      <div class="section-image">
+        <div class="map-embed">
+          <iframe
+            title="Locatie VéloDroom"
+            src="https://maps.google.com/maps?q=Spreeuwengoed+16,+9790+Wortegem-Petegem&output=embed"
+            width="100%" height="320" style="border:0" allowfullscreen loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HUISREGELS -->
+<section class="section section-alt" id="huisregels">
+  <div class="container">
+    <div class="section-header">
+      <span class="label">Praktisch</span>
+      <h2>Check-in &amp; Huisregels</h2>
+    </div>
+    <div class="rules-grid">
+      <div class="rule-block">
+        <h3>🕒 Check-in &amp; Check-out</h3>
+        <ul>
+          <li><strong>Check-in:</strong> Vanaf 15u00 — zelfstandig via deurcode</li>
+          <li><strong>Check-out:</strong> Tot 11u00</li>
+        </ul>
+      </div>
+      <div class="rule-block">
+        <h3>📋 Huisregels</h3>
+        <ul>
+          <li>Niet roken of vapen binnen</li>
+          <li>Geen frituurketel met olie (airfryer beschikbaar)</li>
+          <li>Geen feestjes of grote bijeenkomsten</li>
+          <li>Stilte na 22u00</li>
+          <li>Max. aantal gasten = geboekt aantal</li>
+          <li>Geen huisdieren</li>
+          <li>Schade of defecten meteen melden</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Klaar om te boeken?</h2>
+    <p>Boek rechtstreeks via ons en geniet van de beste prijs. Geen platformkosten.</p>
+    <div class="hero-actions">
+      <a href="boek-nu.html" class="btn btn-primary">Boek Nu</a>
+      <a href="mailto:velodroom16@gmail.com" class="btn btn-ghost-light">velodroom16@gmail.com</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="https://static.wixstatic.com/media/c39e0c_bb763b8cdbab422d846812992f481e3e~mv2.png" alt="VéloDroom logo" width="108" height="54">
+        <p>Vakantiewoning in Wortegem-Petegem.<br>Jouw uitvalsbasis in de Vlaamse Ardennen.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>📞 <a href="tel:+32478512039">+32 478 51 20 39</a> (Tabitha)</p>
+        <p>📞 <a href="tel:+32495688316">+32 495 68 83 16</a> (Rigès)</p>
+        <p>✉️ <a href="mailto:velodroom16@gmail.com">velodroom16@gmail.com</a></p>
+        <p>📍 Spreeuwengoed 16, 9790 Wortegem-Petegem</p>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigatie</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="fotos.html">Foto's</a></li>
+          <li><a href="boek-nu.html">Boek Nu</a></li>
+          <li><a href="privacybeleid.html">Privacybeleid</a></li>
+          <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
+          <li><a href="terugbetaalbeleid.html">Terugbetalingsbeleid</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> VéloDroom. Alle rechten voorbehouden.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Copyright jaar
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Sticky header
+const header = document.getElementById('site-header');
+window.addEventListener('scroll', () => {
+  header.classList.toggle('scrolled', window.scrollY > 10);
+}, { passive: true });
+
+// Mobile nav
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  toggle.classList.toggle('active', open);
+  toggle.setAttribute('aria-expanded', open);
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    toggle.classList.remove('active');
+    toggle.setAttribute('aria-expanded', false);
+  });
+});
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (!t) return;
+    e.preventDefault();
+    window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 88, behavior: 'smooth' });
+  });
+});
+
+// Reviews slider
+(function() {
+  const track = document.getElementById('reviews-track');
+  const dotsEl = document.getElementById('slider-dots');
+  const cards = track.querySelectorAll('.review-card');
+  let cur = 0, timer;
+  const total = cards.length;
+
+  cards.forEach((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.setAttribute('aria-label', 'Recensie ' + (i+1));
+    d.addEventListener('click', () => go(i));
+    dotsEl.appendChild(d);
+  });
+
+  function go(i) {
+    cur = (i + total) % total;
+    track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dotsEl.querySelectorAll('.dot').forEach((d, j) => d.classList.toggle('active', j === cur));
+    clearInterval(timer);
+    timer = setInterval(() => go(cur + 1), 5000);
+  }
+
+  document.getElementById('prev-btn').addEventListener('click', () => go(cur - 1));
+  document.getElementById('next-btn').addEventListener('click', () => go(cur + 1));
+
+  let sx = 0;
+  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+  track.addEventListener('touchend', e => {
+    const dx = sx - e.changedTouches[0].clientX;
+    if (Math.abs(dx) > 50) go(dx > 0 ? cur + 1 : cur - 1);
+  });
+
+  timer = setInterval(() => go(cur + 1), 5000);
+})();
+</script>
+</body>
+</html>
