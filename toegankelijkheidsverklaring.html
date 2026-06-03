@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toegankelijkheidsverklaring — VéloDroom</title>
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',system-ui,sans-serif;color:#1a1a1a;background:#fff;line-height:1.75;font-size:16px}
+    img{display:block;max-width:100%;height:auto}
+    a{color:#6abeec;text-decoration:underline;text-underline-offset:3px}
+    a:hover{color:#4a9fd4}
+    ul{padding-left:1.5rem;list-style:disc}
+    :root{--blue:#6abeec;--orange:#ff6b01;--bg-alt:#eef7fc;--border:#cce8f7;--serif:'Playfair Display',Georgia,serif}
+    .container{max-width:800px;margin:0 auto;padding:0 1.5rem}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);height:72px;display:flex;align-items:center}
+    .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;width:100%;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+    .nav-logo img{height:44px;width:auto}
+    .nav-links{display:flex;align-items:center;gap:2rem}
+    .nav-link{font-size:.95rem;font-weight:500;color:#1a1a1a;text-decoration:none;transition:color .2s}
+    .nav-link:hover{color:var(--blue)}
+    .nav-cta{background:#ff6b01;color:#fff!important;padding:.6rem 1.4rem;border-radius:6px;font-weight:600;text-decoration:none}
+    .nav-cta:hover{background:#e05a00}
+    .nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:6px}
+    .nav-toggle span{display:block;width:24px;height:2px;background:#1a1a1a;border-radius:2px;transition:transform .3s,opacity .3s}
+    .nav-toggle.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .nav-toggle.active span:nth-child(2){opacity:0}
+    .nav-toggle.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+    .page-hero{background:var(--bg-alt);padding:3rem 0 2.5rem;text-align:center}
+    .label{display:inline-block;font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem}
+    .page-hero h1{font-family:var(--serif);font-size:clamp(1.75rem,3.5vw,2.5rem);font-weight:700;color:var(--blue)}
+    .page-hero p{color:#5a5a5a;margin-top:.5rem;font-size:.95rem}
+    .legal-content{padding:3.5rem 0 5rem}
+    .legal-content h2{font-family:var(--serif);font-size:1.3rem;font-weight:600;color:var(--blue);margin:2.5rem 0 .75rem}
+    .legal-content h2:first-child{margin-top:0}
+    .legal-content p{margin-bottom:1rem;color:#333}
+    .legal-content ul{margin-bottom:1rem;color:#333}
+    .legal-content li{margin-bottom:.35rem}
+    .info-box{background:var(--bg-alt);border-left:4px solid var(--blue);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0}
+    .info-box p{margin:0 0 .35rem}
+    .info-box p:last-child{margin:0}
+    .warning-box{background:#fff8f0;border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:1.25rem 1.5rem;margin:1.5rem 0}
+    .warning-box p{margin:0;color:#333}
+    .site-footer{background:#1a2e45;color:rgba(255,255,255,.8);padding:3.5rem 0 0;font-size:.9rem}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto;padding:0 1.5rem 3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+    .footer-brand img{margin-bottom:1rem;border-radius:8px}
+    .footer-brand p{line-height:1.7;opacity:.7;font-size:.875rem}
+    .footer-tv{margin-top:1rem;padding:.6rem .9rem;background:rgba(255,255,255,.08);border-radius:8px;display:inline-flex;align-items:center;gap:.5rem;font-size:.8rem;color:rgba(255,255,255,.7)}
+    .footer-contact h4,.footer-nav h4{color:#fff;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:1rem}
+    .footer-contact p{margin-bottom:.5rem}
+    .footer-contact a,.footer-nav a{color:rgba(255,255,255,.7);transition:color .2s;text-decoration:none}
+    .footer-contact a:hover,.footer-nav a:hover{color:#fff}
+    .footer-nav ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:.5rem}
+    .footer-bottom{text-align:center;padding:1.5rem 0;font-size:.8rem;opacity:.5;max-width:1200px;margin:0 auto}
+    @media(max-width:640px){
+      .nav-toggle{display:flex}
+      .nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;gap:0;border-bottom:1px solid var(--border);padding:1rem 0;box-shadow:0 8px 24px rgba(0,0,0,.08)}
+      .nav-links.open{display:flex}
+      .nav-link{width:100%;padding:.85rem 1.5rem}
+      .nav-cta{margin:.5rem 1.5rem;width:calc(100% - 3rem);text-align:center;border-radius:6px;display:block}
+      .footer-grid{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="https://static.wixstatic.com/media/c39e0c_bb763b8cdbab422d846812992f481e3e~mv2.png" alt="VéloDroom logo" width="108" height="54"></a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#over" class="nav-link">Home</a></li>
+      <li><a href="index.html#accommodatie" class="nav-link">Accommodatie</a></li>
+      <li><a href="fotos.html" class="nav-link">Foto's</a></li>
+      <li><a href="index.html#recensies" class="nav-link">Recensies</a></li>
+      <li><a href="boek-nu.html" class="nav-cta">Boek Nu</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="page-hero">
+    <div class="container">
+      <span class="label">Juridisch</span>
+      <h1>Toegankelijkheidsverklaring</h1>
+      <p>Laatste update: juni 2025</p>
+    </div>
+  </div>
+
+  <div class="legal-content">
+    <div class="container">
+
+      <p>Bij VéloDroom streven we ernaar dat zowel onze website als onze accommodatie toegankelijk zijn voor iedereen, inclusief personen met een beperking.</p>
+
+      <h2>Website</h2>
+      <p>Onze website is ontworpen met aandacht voor gebruiksvriendelijkheid op verschillende apparaten en schermgroottes:</p>
+      <ul>
+        <li>Duidelijke teksten, contrastrijke kleuren en leesbare lettergroottes</li>
+        <li>Responsief ontwerp — werkt op smartphone, tablet en desktop</li>
+        <li>Compatibel met schermlezers en toetsenbordnavigatie</li>
+        <li>Alternatieve teksten (alt-teksten) op alle afbeeldingen</li>
+      </ul>
+      <div class="warning-box">
+        <p>Sommige onderdelen van de website zijn mogelijk nog niet volledig toegankelijk. We werken doorlopend aan verbeteringen.</p>
+      </div>
+
+      <h2>Accommodatie</h2>
+      <p>We streven naar comfort en veiligheid voor gasten van alle leeftijden. Echter:</p>
+      <div class="warning-box">
+        <p><strong>VéloDroom is niet volledig rolstoeltoegankelijk.</strong> Er zijn trappen en drempels aanwezig in de woning.</p>
+      </div>
+      <p>Heeft u specifieke behoeften of vragen over toegankelijkheid? Neem dan vooraf contact met ons op, zodat we uw verblijf zo comfortabel mogelijk kunnen maken.</p>
+
+      <h2>Feedback en contact</h2>
+      <p>Heeft u problemen met de toegankelijkheid van onze website of accommodatie? We horen het graag zodat we kunnen verbeteren.</p>
+      <div class="info-box">
+        <p><strong>VéloDroom</strong></p>
+        <p><a href="mailto:velodroom16@gmail.com">velodroom16@gmail.com</a></p>
+        <p><a href="tel:+32478512039">+32 478 51 20 39</a></p>
+      </div>
+
+      <h2>Wetgeving</h2>
+      <p>Deze verklaring is opgesteld in overeenstemming met de relevante Belgische en Europese wetgeving met betrekking tot digitale en fysieke toegankelijkheid.</p>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="https://static.wixstatic.com/media/c39e0c_bb763b8cdbab422d846812992f481e3e~mv2.png" alt="VéloDroom logo" width="108" height="54">
+      <p>Vakantiewoning in Wortegem-Petegem.<br>Jouw uitvalsbasis in de Vlaamse Ardennen.</p>
+      <div class="footer-tv">🏅 Erkend door Toerisme Vlaanderen</div>
+    </div>
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p>📞 <a href="tel:+32478512039">+32 478 51 20 39</a> (Tabitha)</p>
+      <p>📞 <a href="tel:+32495688316">+32 495 68 83 16</a> (Rigès)</p>
+      <p>✉️ <a href="mailto:velodroom16@gmail.com">velodroom16@gmail.com</a></p>
+      <p>📍 Spreeuwengoed 16, 9790 Wortegem-Petegem</p>
+    </div>
+    <div class="footer-nav">
+      <h4>Navigatie</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fotos.html">Foto's</a></li>
+        <li><a href="boek-nu.html">Boek Nu</a></li>
+        <li><a href="privacybeleid.html">Privacybeleid</a></li>
+        <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
+        <li><a href="terugbetaalbeleid.html">Terugbetalingsbeleid</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom"><p>© <span id="year"></span> VéloDroom. Alle rechten voorbehouden.</p></div>
+</footer>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+toggle.addEventListener('click', () => { const o = navLinks.classList.toggle('open'); toggle.classList.toggle('active', o); toggle.setAttribute('aria-expanded', o); });
+</script>
+</body>
+</html>
